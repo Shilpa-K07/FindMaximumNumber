@@ -24,21 +24,6 @@ public class MaximumNumber {
 		}
 	}
 
-	public String findMaximumNumber(String firstString, String secondString, String thirdString) throws Exception {
-		String maxNumber = firstString;
-		try {
-			if(secondString.compareTo(maxNumber) > 0 )
-				maxNumber = secondString;
-			if(thirdString.compareTo(maxNumber) > 0 )
-				maxNumber = thirdString;
-			System.out.println("Maximum of "+firstString+", "+secondString+", "+thirdString+" is: "+maxNumber);
-		}
-		catch(Exception e) {
-			throw new Exception();
-		}
-		return maxNumber;
-	}
-
 	private void getFloatingNumbers() {
 		System.out.println("Enter first floating number: ");
 		float firstNumber = scanner.nextFloat();
@@ -53,21 +38,6 @@ public class MaximumNumber {
 		}
 	}
 
-	public double findMaximumNumber(Float firstNumber, Float secondNumber, Float thirdNumber) throws Exception {
-		float maxNumber = firstNumber;
-		try {
-			if(secondNumber.compareTo(maxNumber) > 0 )
-				maxNumber = secondNumber;
-			if(thirdNumber.compareTo(maxNumber) > 0 )
-				maxNumber = thirdNumber;
-			System.out.println("Maximum of "+firstNumber+", "+secondNumber+", "+thirdNumber+" is: "+maxNumber);
-		}
-		catch(Exception e) {
-			throw new Exception();
-		}
-		return maxNumber;
-	}
-		
 	private void getUserInputs() {
 		System.out.println("Enter first number: ");
 		int firstNumber = scanner.nextInt();
@@ -82,14 +52,14 @@ public class MaximumNumber {
 		}
 	}
 
-	public int findMaximumNumber(Integer firstNumber, Integer secondNumber, Integer thirdNumber) throws Exception {
-		int maxNumber = firstNumber;
+	public <T extends Comparable<T>> T findMaximumNumber(T firstValue, T secondValue, T thirdValue) throws Exception {
+		T maxNumber = firstValue;
 		try {
-			if(secondNumber.compareTo(maxNumber) > 0 )
-				maxNumber = secondNumber;
-			if(thirdNumber.compareTo(maxNumber) > 0 )
-				maxNumber = thirdNumber;
-			System.out.println("Maximum of "+firstNumber+", "+secondNumber+", "+thirdNumber+" is: "+maxNumber);
+			if(secondValue.compareTo(maxNumber) > 0 )
+				maxNumber = secondValue;
+			if(thirdValue.compareTo(maxNumber) > 0 )
+				maxNumber = thirdValue;
+			System.out.println("Maximum of "+firstValue+", "+secondValue+", "+thirdValue+" is: "+maxNumber);
 		}
 		catch(Exception e) {
 			throw new Exception();
