@@ -7,7 +7,7 @@ public class MaximumStringValueTest {
 	public void givenStrings_WhenMaxStringAtFirstPosition_ShouldReturnSameString() {
 		MaximumNumber findMaximumNumber = new MaximumNumber();
 		try {
-			Assert.assertEquals("white", findMaximumNumber.findMaximumNumber("white", "red", "black"));
+			Assert.assertEquals("white", findMaximumNumber.maximumValue("white", "red", "black"));
 		} catch (Exception exception) {
 			exception.printStackTrace();
 		}
@@ -17,7 +17,7 @@ public class MaximumStringValueTest {
 	public void givenStrings_WhenMaxStringAtSecondPosition_ShouldReturnSameString() {
 		MaximumNumber findMaximumNumber = new MaximumNumber();
 		try {
-			Assert.assertEquals("yellow", findMaximumNumber.findMaximumNumber("red", "yellow", "black"));
+			Assert.assertEquals("yellow", findMaximumNumber.maximumValue("red", "yellow", "black"));
 		} catch (Exception exception) {
 			exception.printStackTrace();
 		}
@@ -27,7 +27,7 @@ public class MaximumStringValueTest {
 	public void givenStrings_WhenMaxStringAtThirdPosition_ShouldReturnSameString() {
 		MaximumNumber findMaximumNumber = new MaximumNumber();
 		try {
-			Assert.assertEquals("yellow", findMaximumNumber.findMaximumNumber("red", "green", "yellow"));
+			Assert.assertEquals("yellow", findMaximumNumber.maximumValue("red", "green", "yellow"));
 		} catch (Exception exception) {
 			exception.printStackTrace();
 		}
@@ -37,7 +37,7 @@ public class MaximumStringValueTest {
 	public void givenStrings_WhenMaxStringAtFirstPosition_ShouldReturnDifferentString() {
 		MaximumNumber findMaximumNumber = new MaximumNumber();
 		try {
-			Assert.assertNotEquals("black", findMaximumNumber.findMaximumNumber("white", "red", "black"));
+			Assert.assertNotEquals("black", findMaximumNumber.maximumValue("white", "red", "black"));
 		} catch (Exception exception) {
 			exception.printStackTrace();
 		}
@@ -47,7 +47,7 @@ public class MaximumStringValueTest {
 	public void givenStrings_WhenMaxStringAtSecondPosition_ShouldReturnDifferentString() {
 		MaximumNumber findMaximumNumber = new MaximumNumber();
 		try {
-			Assert.assertNotEquals("red", findMaximumNumber.findMaximumNumber("black", "white", "red"));
+			Assert.assertNotEquals("red", findMaximumNumber.maximumValue("black", "white", "red"));
 		} catch (Exception exception) {
 			exception.printStackTrace();
 		}
@@ -57,7 +57,7 @@ public class MaximumStringValueTest {
 	public void givenStrings_WhenMaxStringAtThirdPosition_ShouldReturnDifferentString() {
 		MaximumNumber findMaximumNumber = new MaximumNumber();
 		try {
-			Assert.assertNotEquals("red", findMaximumNumber.findMaximumNumber("black", "red", "white"));
+			Assert.assertNotEquals("red", findMaximumNumber.maximumValue("black", "red", "white"));
 		} catch (Exception exception) {
 			exception.printStackTrace();
 		}

@@ -1,15 +1,43 @@
 import java.util.Scanner;
 
-public class MaximumNumber {
+public class MaximumNumber<T extends Comparable<T>> {
 	Scanner scanner = new Scanner(System.in);
+	
+	T firstValue, secondValue, thirdValue;
+	
+	MaximumNumber(T firstValue, T secondValue, T thirdValue){
+		this.firstValue = firstValue;
+		this.secondValue = secondValue;
+		this.thirdValue = thirdValue;
+	}
+	public MaximumNumber() {
+	}
 	
 	public static void main(String[] args) {
 		MaximumNumber maximumNumber = new MaximumNumber();
 		maximumNumber.getUserInputs();
-		maximumNumber.getFloatingNumbers();
-		maximumNumber.getStringValues();
 	}
-
+	
+	public static <T extends Comparable<T>> T maximumValue(T firstValue, T secondValue, T thirdValue) throws Exception {
+		T maxNumber = firstValue;
+		try {
+			if(secondValue.compareTo(maxNumber) > 0 )
+				maxNumber = secondValue;
+			if(thirdValue.compareTo(maxNumber) > 0 )
+				maxNumber = thirdValue;
+			System.out.println("Maximum of "+firstValue+", "+secondValue+", "+thirdValue+" is: "+maxNumber);
+		}
+		catch(Exception e) {
+			throw new Exception();
+		}
+		return maxNumber;
+		
+	}
+	
+	public void findMaximumValue() throws Exception {
+		maximumValue(this.firstValue, this.secondValue, this.thirdValue);
+	}
+	
 	private void getStringValues() {
 		System.out.println("Enter first string: ");
 		String firstString = scanner.next();
@@ -18,7 +46,7 @@ public class MaximumNumber {
 		System.out.println("Enter third string: ");
 		String thirdString = scanner.next();
 		try {
-			findMaximumNumber(firstString, secondString, thirdString);
+			new MaximumNumber(firstString, secondString, thirdString).findMaximumValue();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -32,7 +60,7 @@ public class MaximumNumber {
 		System.out.println("Enter third floating number: ");
 		float thirdNumber = scanner.nextFloat();
 		try {
-			findMaximumNumber(firstNumber, secondNumber, thirdNumber);
+			new MaximumNumber(firstNumber, secondNumber, thirdNumber).findMaximumValue();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -46,24 +74,9 @@ public class MaximumNumber {
 		System.out.println("Enter third number: ");
 		int thirdNumber = scanner.nextInt();
 		try {
-			findMaximumNumber(firstNumber, secondNumber, thirdNumber);
+			new MaximumNumber(firstNumber, secondNumber, thirdNumber).findMaximumValue();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-	}
-
-	public <T extends Comparable<T>> T findMaximumNumber(T firstValue, T secondValue, T thirdValue) throws Exception {
-		T maxNumber = firstValue;
-		try {
-			if(secondValue.compareTo(maxNumber) > 0 )
-				maxNumber = secondValue;
-			if(thirdValue.compareTo(maxNumber) > 0 )
-				maxNumber = thirdValue;
-			System.out.println("Maximum of "+firstValue+", "+secondValue+", "+thirdValue+" is: "+maxNumber);
-		}
-		catch(Exception e) {
-			throw new Exception();
-		}
-		return maxNumber;
 	}
 }
