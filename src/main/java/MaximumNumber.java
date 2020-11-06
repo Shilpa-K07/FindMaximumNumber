@@ -7,6 +7,36 @@ public class MaximumNumber {
 		MaximumNumber maximumNumber = new MaximumNumber();
 		maximumNumber.getUserInputs();
 		maximumNumber.getFloatingNumbers();
+		maximumNumber.getStringValues();
+	}
+
+	private void getStringValues() {
+		System.out.println("Enter first string: ");
+		String firstString = scanner.next();
+		System.out.println("Enter second string: ");
+		String secondString = scanner.next();
+		System.out.println("Enter third string: ");
+		String thirdString = scanner.next();
+		try {
+			findMaximumNumber(firstString, secondString, thirdString);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public String findMaximumNumber(String firstString, String secondString, String thirdString) throws Exception {
+		String maxNumber = firstString;
+		try {
+			if(secondString.compareTo(maxNumber) > 0 )
+				maxNumber = secondString;
+			if(thirdString.compareTo(maxNumber) > 0 )
+				maxNumber = thirdString;
+			System.out.println("Maximum of "+firstString+", "+secondString+", "+thirdString+" is: "+maxNumber);
+		}
+		catch(Exception e) {
+			throw new Exception();
+		}
+		return maxNumber;
 	}
 
 	private void getFloatingNumbers() {
