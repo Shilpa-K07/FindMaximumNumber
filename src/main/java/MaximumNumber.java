@@ -13,6 +13,7 @@ public class MaximumNumber<T extends Comparable<T>> {
 		this.secondValue = secondValue;
 		this.thirdValue = thirdValue;
 	}
+
 	public MaximumNumber() {
 	}
 	
