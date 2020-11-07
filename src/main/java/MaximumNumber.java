@@ -30,11 +30,16 @@ public class MaximumNumber<T extends Comparable<T>> {
 				maxNumber = secondValue;
 			if(thirdValue.compareTo(maxNumber) > 0 )
 				maxNumber = thirdValue;
-			System.out.println("Maximum of "+firstValue+", "+secondValue+", "+thirdValue+" is: "+maxNumber);
 		}
 		catch(Exception e) {
 			throw new Exception();
 		}
+		ArrayList inputList = new ArrayList();
+		inputList.add(firstValue);
+		inputList.add(secondValue);
+		inputList.add(thirdValue);
+		printMaximumNumber(inputList, maxNumber);
+		
 		return maxNumber;
 	}
 	
@@ -47,10 +52,15 @@ public class MaximumNumber<T extends Comparable<T>> {
 		catch(Exception e) {
 			throw new Exception();
 		}
-		System.out.println("Maximum of "+list+" is: "+maximumNumber);
+		printMaximumNumber(list, maximumNumber);
+		
 		return maximumNumber;
 	}
 	
+	private static<T> void printMaximumNumber(ArrayList<T> inputList, T maximumNumber) {
+		System.out.println("Maximum of "+inputList+" is: "+maximumNumber);
+	}
+
 	public void findMaximumValue() throws Exception {
 		maximumValue(this.firstValue, this.secondValue, this.thirdValue);
 	}
