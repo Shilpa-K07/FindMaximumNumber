@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.Scanner;
 
 public class MaximumNumber<T extends Comparable<T>> {
@@ -16,6 +19,8 @@ public class MaximumNumber<T extends Comparable<T>> {
 	public static void main(String[] args) {
 		MaximumNumber maximumNumber = new MaximumNumber();
 		maximumNumber.getUserInputs();
+		maximumNumber.getFloatingNumbers();
+		maximumNumber.getStringValues();
 	}
 	
 	public static <T extends Comparable<T>> T maximumValue(T firstValue, T secondValue, T thirdValue) throws Exception {
@@ -31,7 +36,19 @@ public class MaximumNumber<T extends Comparable<T>> {
 			throw new Exception();
 		}
 		return maxNumber;
-		
+	}
+	
+	public static <T extends Comparable<T>> T maximumValue(ArrayList<T> list) throws Exception {
+		T maximumNumber;
+		try {
+			Collections.sort(list);
+			maximumNumber = list.get(list.size()-1);
+		}
+		catch(Exception e) {
+			throw new Exception();
+		}
+		System.out.println("Maximum of "+list+" is: "+maximumNumber);
+		return maximumNumber;
 	}
 	
 	public void findMaximumValue() throws Exception {
